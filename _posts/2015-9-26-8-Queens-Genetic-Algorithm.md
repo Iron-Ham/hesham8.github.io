@@ -2,6 +2,7 @@
 layout: post
 title: Baby's First Genetic Algorithm
 subtitle: Solving the 8 Queens Problem
+author: Hesham Salman
 ---
 
 Genetic algorithms have their roots in biological evolution and reproduction. Genetic algorithms are a variant of stochastic beam search, with the key difference being that the parent states reproduce sexually rather than asexually.
