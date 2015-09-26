@@ -1,17 +1,10 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: "About"
+description: "This is what I do."
+header-img: "img/about-bg.jpg"
 ---
 
-Graduate Student, Central Michigan University
+I'm a graduate student at Central Michigan University (fire up chips!). I have a strong interest in algorithms, combinatorial mathematics, and mobile development. I really like trees and graphs.
 
-### Interests
-
-I really like algorithms, trees, and graphs. Mobile development is neat because it's always in your pocket. I've become partial to Swift of-late.
-
-Longboards and guitars are where my non-coding time goes.
-
-### Contact me
-
-[hesham8@gmail.com](mailto:hesham8@gmail.com)
+When I'm not coding, I'm probably out on my longboard (weather permitting!) or playing guitar/bass.
