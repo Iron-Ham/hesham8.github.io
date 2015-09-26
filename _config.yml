@@ -9,7 +9,7 @@ twitter_username: devilsacvodad
 github_username:  hesham8
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 highlighter: pygments
 permalink: pretty
 paginate: 5
