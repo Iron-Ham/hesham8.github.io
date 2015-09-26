@@ -99,7 +99,7 @@ double assessFitness(Integer[] candidate) {
 }
 ```
 
-For an N-Queens problem, the fitness function is relatively straightforward. There is a fixed number of possible collisions, MAX_COLLISIONS which can be calculated as `(n-1) + (n-2) + (n-3) + ... + 1 + 0`. Subtracting the number of collisions in the current configuration can provide a relative fitness. Dividing it by the maximum number of collisions will scale that number between 0.0 (worst fitness) and 1.0 (solution).
+For an N-Queens problem, the fitness function is relatively straightforward. There is a fixed number of possible collisions, MAX_COLLISIONS which can be calculated as `(n-1) + (n-2) + (n-3) + ... + 1 + 0`. Subtracting the number of collisions in the current configuration can provide a relative fitness. Dividing it by the maximum number of collisions will scale that number between `0.0` (worst fitness) and `1.0` (solution).
 
 This number will have to be scaled once more to determine the probability of the members of the population to mate.
 
