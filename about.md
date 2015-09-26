@@ -4,12 +4,14 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Graduate Student, Central Michigan University
 
-### More Information
+### Interests
 
-A place to include any other types of information that you'd like to include about yourself.
+I really like algorithms, trees, and graphs. Mobile development is neat because it's always in your pocket. I've become partial to Swift of-late.
+
+Longboards and guitars are where my non-coding time goes.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[hesham8@gmail.com](mailto:hesham8@gmail.com)
