@@ -10,7 +10,7 @@ The genetic algorithm begins by generating a random set of states. Each state is
 
 Let's take a look at some of the components of such an algorithm.
 
-In this example, I'll be using a genetic algorithm to solve the 8-Queens problem. Let's begin by taking a look at the main function, and then we'll delve into the private utility functions.
+In this example, I'll be using a genetic algorithm to solve the [8-Queens](https://en.wikipedia.org/wiki/Eight_queens_puzzle) problem. Let's begin by taking a look at the main function, and then we'll delve into the private utility functions.
 
 ```java
 private final int GRID_SIZE = 8; //8 Queens but could be an N-queens prob. Fitness function will auto-magically adjust
