@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Eight Queens Problem"
-excerpt: "An introduction to the eight queens problem, and a code snippet"
+excerpt: "An introduction to the eight queens problem, and a recursive solution"
 tags: [eight_queens, code_snippet]
 comments: true
 image:

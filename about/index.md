@@ -5,7 +5,7 @@ tags: [about]
 comments: false
 image:
   feature: wood-art-bottles-glass.jpg
-  credit: Pexel
+  credit: Pexels
   creditlink: https://www.pexels.com/search/art/
 ---
 
