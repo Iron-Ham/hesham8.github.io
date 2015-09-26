@@ -31,24 +31,111 @@ Computing each solution can be expensive for the 8-queens problem as there are r
 
 There are several techniques to do this. In the first three parts of this series, I will discuss a recursive solution, a genetic algorithm solution, and a simulated annealing solution. In the final part, I will compare the three approaches.
 
-## Forage occaecat cardigan qui
+## The Recursive Solution
 
-Fashion axe hella gastropub lo-fi kogi 90's aliquip +1 veniam delectus tousled. Cred sriracha locavore gastropub kale chips, iPhone mollit sartorial. Anim dolore 8-bit, pork belly dolor photo booth aute flannel small batch. Dolor disrupt ennui, tattooed whatever salvia Banksy sartorial roof party selfies raw denim sint meh pour-over. Ennui eu cardigan sint, gentrify iPhone cornhole.
+Solving this recursively is pretty straightforward once the logic is reasoned out. Let's represent our chessboard as an array. In order to do that, let's define the size of our grid (and the number of our queens) as a constant.
 
-> Whatever velit occaecat quis deserunt gastropub, leggings elit tousled roof party 3 wolf moon kogi pug blue bottle ea. Fashion axe shabby chic Austin quinoa pickled laborum bitters next level, disrupt deep v accusamus non fingerstache.
+{% highlight java %}
+private final int GRID_SIZE = 8;
+{% endhighlight %}
 
-Tote bag asymmetrical elit sunt. Occaecat authentic Marfa, hella McSweeney's next level irure veniam master cleanse. Sed hoodie letterpress artisan wolf leggings, 3 wolf moon commodo ullamco. Anim occupy ea labore Terry Richardson. Tofu ex master cleanse in whatever pitchfork banh mi, occupy fugiat fanny pack Austin authentic. Magna fugiat 3 wolf moon, labore McSweeney's sustainable vero consectetur. Gluten-free disrupt enim, aesthetic fugiat jean shorts trust fund keffiyeh magna try-hard.
+Each value of the array can be treated as the measure the row, and each position in the array as a measure of its column. Let's examine the recursive logic to be implemented:
 
-## Hoodie Duis
+{% raw %}
+ways to arrange 8 queens on an 8x8 board =
+  ways to arrange 8 queens on an 8x8 board with queen at (7,0)
+  ways to arrange 8 queens on an 8x8 board with queen at (7, 1)
+  ways to ... with queen at (7, 2)
+  ways to ... with queen at (7, 3)
+  ways to ... with queen at (7, 4)
+  ways to ... with queen at (7, 5)
+  ways to ... with queen at (7, 6)
+  ways to ... with queen at (7, 7)
+  = 8 branches
+  Each one of these "branches" can be computed by calculating:
+    ways to ... with queen at (7, 2)  =
+      ways to ... with queen at (7, 2)  and (6, 0)
+      ways to ... with queen at (7, 2)  and (6, 4)
+      ways to ... with queen at (7, 2)  and (6, 5)
+      ways to ... with queen at (7, 2)  and (6, 6)
+      ways to ... with queen at (7, 2)  and (6, 7)
+      = 5 branches
+      (We don't need to check the other 3 possibilities, because it would violate the
+      solution constraints)
+      etc...
+{% endraw %}
 
-Actually salvia consectetur, hoodie duis lomo YOLO sunt sriracha. Aute pop-up brunch farm-to-table odio, salvia irure occaecat. Sriracha small batch literally skateboard. Echo Park nihil hoodie, aliquip forage artisan laboris. Trust fund reprehenderit nulla locavore. Stumptown raw denim kitsch, keffiyeh nulla twee dreamcatcher fanny pack ullamco 90's pop-up est culpa farm-to-table. Selfies 8-bit do pug odio.
+Following this logic, this is actually a fairly straightforward solution to implement.
 
-### Thundercats Ho!
+{% highlight java %}
+//Does not include mirror image solutions. (i.e., 42061753 is not distinct from 35716024)
+Integer[] placeQueens(int row, Integer[] columns, List<Integer[]> results) {
+  Integer[] returnValue;
+    if (row == GRID_SIZE) {
+        return columns;
+    } else {
+        for (int col = 0; col < GRID_SIZE; col++) {
+            if (checkValid(columns, row, col)) {
+                columns[row] = col;
+                returnValue = placeQueens(row + 1, columns, results);
+                if (returnValue != null)
+                    return returnValue;
+            }
+        }
+    }
+    return null;
+}
+private boolean checkValid(Integer[] columns, int row1, int column1) {
+    for (int row2 = 0; row2 < row1; row2++) {
+        int column2 = columns[row2];
+        if (column1 == column2)
+            return false;
 
-Fingerstache thundercats Williamsburg, deep v scenester Banksy ennui vinyl selfies mollit biodiesel duis odio pop-up. Banksy 3 wolf moon try-hard, sapiente enim stumptown deep v ad letterpress. Squid beard brunch, exercitation raw denim yr sint direct trade. Raw denim narwhal id, flannel DIY McSweeney's seitan. Letterpress artisan bespoke accusamus, meggings laboris consequat Truffaut qui in seitan. Sustainable cornhole Schlitz, twee Cosby sweater banh mi deep v forage letterpress flannel whatever keffiyeh. Sartorial cred irure, semiotics ethical sed blue bottle nihil letterpress.
+        int columnDistance = Math.abs(column2 - column1);
+        int rowDistance = row1 - row2;
+        if (columnDistance == rowDistance)
+            return false;
+    }
+    return true;
+}
+{% endhighlight %}
 
-Occupy et selvage squid, pug brunch blog nesciunt hashtag mumblecore skateboard yr kogi. Ugh small batch swag four loko. Fap post-ironic qui tote bag farm-to-table american apparel scenester keffiyeh vero, swag non pour-over gentrify authentic pitchfork. Schlitz scenester lo-fi voluptate, tote bag irony bicycle rights pariatur vero Vice freegan wayfarers exercitation nisi shoreditch. Chambray tofu vero sed. Street art swag literally leggings, Cosby sweater mixtape PBR lomo Banksy non in pitchfork ennui McSweeney's selfies. Odd Future Banksy non authentic.
+Currently, the `placeQueens()` method is written such that it can only written a single valid solution. Modifying it such that it returns *all* valid solutions is fairly trivial:
 
-Aliquip enim artisan dolor post-ironic. Pug tote bag Marfa, deserunt pour-over Portland wolf eu odio intelligentsia american apparel ugh ea. Sunt viral et, 3 wolf moon gastropub pug id. Id fashion axe est typewriter, mlkshk Portland art party aute brunch. Sint pork belly Cosby sweater, deep v mumblecore kitsch american apparel. Try-hard direct trade tumblr sint skateboard. Adipisicing bitters excepteur biodiesel, pickled gastropub aute veniam.
+{% highlight java %}
+//Does not include mirror image solutions. (i.e., 42061753 is not distinct from 35716024)
+void placeQueens(int row, Integer[] columns, List<Integer[]> results) {
+    if (row == GRID_SIZE) {
+        results.add(columns.clone());
+    } else {
+        for (int col = 0; col < GRID_SIZE; col++) {
+            if (checkValid(columns, row, col)) {
+                columns[row] = col;
+                placeQueens(row + 1, columns, results);
+            }
+        }
+    }
+}
+
+void placeQueensWithDuplicates(int row, Integer[] columns, List<Integer[]> results) {
+    if (row == GRID_SIZE) {
+        results.add(columns.clone());
+        Integer[] reverseSolution = new Integer[GRID_SIZE];
+        for (int i = 0; i < GRID_SIZE; i++) {
+            reverseSolution[i] = columns[columns.length - i - 1];
+        }
+        results.add(reverseSolution);
+    } else {
+        for (int col = 0; col < GRID_SIZE; col++) {
+            if (checkValid(columns, row, col)) {
+                columns[row] = col;
+                placeQueensWithDuplicates(row + 1, columns, results);
+            }
+        }
+    }
+}
+{% endhighlight %}
+
+Note that in order to list all valid unique solutions, the mirror image of each solution generated this way must also be included.
 
 [^1]: Texture image courtesty of [Lovetextures](http://www.lovetextures.com/)
