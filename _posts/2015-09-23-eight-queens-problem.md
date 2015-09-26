@@ -42,29 +42,7 @@ private final int GRID_SIZE = 8;
 
 Each value of the array can be treated as the measure the row, and each position in the array as a measure of its column. Let's examine the recursive logic to be implemented:
 
-{% raw %}
-ways to arrange 8 queens on an 8x8 board =
-  ways to arrange 8 queens on an 8x8 board with queen at (7,0)
-  ways to arrange 8 queens on an 8x8 board with queen at (7, 1)
-  ways to ... with queen at (7, 2)
-  ways to ... with queen at (7, 3)
-  ways to ... with queen at (7, 4)
-  ways to ... with queen at (7, 5)
-  ways to ... with queen at (7, 6)
-  ways to ... with queen at (7, 7)
-  = 8 branches
-  Each one of these "branches" can be computed by calculating:
-    ways to ... with queen at (7, 2)  =
-      ways to ... with queen at (7, 2)  and (6, 0)
-      ways to ... with queen at (7, 2)  and (6, 4)
-      ways to ... with queen at (7, 2)  and (6, 5)
-      ways to ... with queen at (7, 2)  and (6, 6)
-      ways to ... with queen at (7, 2)  and (6, 7)
-      = 5 branches
-      (We don't need to check the other 3 possibilities, because it would violate the
-      solution constraints)
-      etc...
-{% endraw %}
+{% gist hesham8/68f0a31cd18c0546721d %}
 
 Following this logic, this is actually a fairly straightforward solution to implement.
 
