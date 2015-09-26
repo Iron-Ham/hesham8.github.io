@@ -137,5 +137,3 @@ void placeQueensWithDuplicates(int row, Integer[] columns, List<Integer[]> resul
 {% endhighlight %}
 
 Note that in order to list all valid unique solutions, the mirror image of each solution generated this way must also be included.
-
-[^1]: Texture image courtesty of [Lovetextures](http://www.lovetextures.com/)
