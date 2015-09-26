@@ -1,16 +1,61 @@
-# Site settings
-title: Slackr Code
-header-img: img/home-bg.jpg
-email: hesham8@gmail.com
-description: "code snippets, experiments, and general musings"
-baseurl: ""
-url: "http://slackr.me"
-twitter_username: devilsacvodad
-github_username:  hesham8
+# Site wide configuration
 
-# Build settings
-markdown: redcarpet
+title:            slackr
+locale:           en_US
+url:          # http://slackr.me
+
+
+# Jekyll configuration
+
+permalink:   /:categories/:title/
+markdown:    kramdown
 highlighter: pygments
-permalink: pretty
-paginate: 5
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+
+# Site owner
+owner:
+  name: Hesham Salman
+  avatar: bio-photo.jpg
+  bio: "Graduate student at Central Michigan University (fire up chips!)"
+  email: heshamsalman@slackr.me
+  disqus-shortname:
+  twitter: devilsacvodad
+  facebook: #username
+  google:
+    plus: #username
+    analytics: UA-68115781-1
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: hesham8
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: heshamsalman
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
