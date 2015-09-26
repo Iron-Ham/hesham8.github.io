@@ -5,9 +5,9 @@ excerpt: "An introduction to the eight queens problem, and a recursive solution"
 tags: [eight_queens, code_snippet]
 comments: true
 image:
-  feature: sample-image-4.jpg
-  credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+  feature: queen2.jpg
+  credit: AlmostQueen
+  creditlink: http://www.almostqueen.com/photos/
 ---
 
 <section id="table-of-contents" class="toc">
@@ -20,6 +20,7 @@ image:
 </div>
 </section><!-- /#table-of-contents -->
 
+> Part One of Four
 
 This is the first part in a four part series on the eight queens problem. This first part will focus on introducing the Eight Queens problem, as well as recursively generating a set of all possible solutions.
 
