@@ -1,0 +1,4 @@
+name: Slackr Code
+markdown: redcarpet
+highlighter: true
+baseurl: /snippets
