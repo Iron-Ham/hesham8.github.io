@@ -4,9 +4,9 @@ title: About Me
 tags: [about]
 comments: false
 image:
-  feature: wood-art-bottles-glass.jpg
-  credit: Pexels
-  creditlink: https://www.pexels.com/search/art/
+  feature: dominican-republic.jpg
+  credit: Hesham Salman
+  creditlink: 
 ---
 
 I'm a Master of Science student in the Computer Science program at Central Michigan University. I also completed my Bachelor of Science in Computer Science at Central Michigan University.
