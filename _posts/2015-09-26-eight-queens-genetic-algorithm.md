@@ -1,15 +1,20 @@
 ---
 layout: post
 title: "Baby's First Genetic Algorithm"
-excerpt: "A genetic algorithm approach and solution to the eight queens problem."
-tags: [eight_queens, genetic_algorithm, code_snippet, java]
+excerpt: A genetic algorithm approach and solution to the eight queens problem.
+tags: 
+  - eight_queens
+  - genetic_algorithm
+  - code_snippet
+  - java
 comments: true
-image:
-  feature: dna-genes.jpg
+image: 
+  feature: "dna-genes.jpg"
   credit: PracticalEthics
-  creditlink: http://blog.practicalethics.ox.ac.uk/2015/04/is-sexual-offending-genetic/
-
+  creditlink: "http://blog.practicalethics.ox.ac.uk/2015/04/is-sexual-offending-genetic/"
+published: true
 ---
+
 
 <section id="table-of-contents" class="toc">
   <header>
@@ -148,7 +153,7 @@ Genetic algorithms often perform better with some meta-heuristic optimization of
 
 There's a lot of neat applications of these algorithms. There are a ton of journals that cover this, but for a more fun reading, check [this](http://www.damninteresting.com/on-the-origin-of-circuits/) out.
 
-
+For the full code sample used here, please visit [GitHub](https://github.com/hesham8/daily-challenge/tree/master/8Queens).
 
 [^1]: <https://en.wikipedia.org/wiki/Eight_queens_puzzle>
 [^2]: <https://en.wikipedia.org/wiki/Culling>
