@@ -1,13 +1,16 @@
 ---
 layout: page
 title: About Me
-tags: [about]
+tags: 
+  - about
 comments: false
-image:
-  feature: dominican-republic.jpg
+image: 
+  feature: "dominican-republic.jpg"
   credit: Hesham Salman
-  creditlink: 
+  creditlink: null
+published: true
 ---
+
 
 I'm a Master of Science student in the Computer Science program at Central Michigan University. I also completed my Bachelor of Science in Computer Science at Central Michigan University.
 
@@ -17,7 +20,6 @@ I'm a Master of Science student in the Computer Science program at Central Michi
 * Algorithms
 
 ### Research Interests
-* Testing performance
 * Android user profiling
 
 ### Language Interests
