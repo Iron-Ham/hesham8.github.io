@@ -16,6 +16,7 @@ published: true
 ---
 
 
+
 <section id="table-of-contents" class="toc">
   <header>
     <h3>Overview</h3>
@@ -145,15 +146,10 @@ It's clear to see how the child has inherited portions of its parents. Often tim
 
 Inheritance is a very important property of genetic algorithms, as it, through the crossover step, allows the algorithm to trend upwards.
 
-## Optimizing Genetic Algorithms
+For the full code sample used here, please visit [GitHub](https://github.com/hesham8/daily-challenge/tree/master/8Queens). 
 
-Genetic algorithms often perform better with some meta-heuristic optimization of the algorithm's constant values, such as `MUTATION_RATE` and the `CULLING_THRESHOLD`. Meta-heuristic optimizations can greatly increase the performance of genetic algorithms. Genetic algorithms are often used in optimization problems, such as circuit layout and chip design. They've helped to bring in the new field of [evolvable hardware](https://en.wikipedia.org/wiki/Evolvable_hardware).
 
-## Further Reading
-
-There's a lot of neat applications of these algorithms. There are a ton of journals that cover this, but for a more fun reading, check [this](http://www.damninteresting.com/on-the-origin-of-circuits/) out.
-
-For the full code sample used here, please visit [GitHub](https://github.com/hesham8/daily-challenge/tree/master/8Queens).
+If you found this interesting, check *[this](http://www.damninteresting.com/on-the-origin-of-circuits/)* out.
 
 [^1]: <https://en.wikipedia.org/wiki/Eight_queens_puzzle>
 [^2]: <https://en.wikipedia.org/wiki/Culling>
