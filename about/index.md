@@ -1,10 +1,11 @@
 ---
 layout: page
 title: About Me
-tags: 
+tags:
   - about
 comments: false
-image: 
+share: false
+image:
   feature: "dominican-republic.jpg"
   credit: Hesham Salman
   creditlink: null

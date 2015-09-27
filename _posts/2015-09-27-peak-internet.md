@@ -2,7 +2,7 @@
 layout: post
 title: "We've Reached Peak Internet"
 excerpt: "Don't let your dreams be dreams."
-tags: [sample post, link post]
+tags: [link_post, fluff]
 link: https://youtu.be/hAEQvlaZgKY
 share: true
 ---
