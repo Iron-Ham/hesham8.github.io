@@ -12,6 +12,7 @@ published: true
 ---
 
 
+
 I'm a Master of Science student in the Computer Science program at Central Michigan University. I also completed my Bachelor of Science in Computer Science at Central Michigan University.
 
 ### Academic Interests
@@ -30,3 +31,4 @@ I'm a Master of Science student in the Computer Science program at Central Michi
 ### Personal Interests
 * Guitar and bass
 * Longboarding
+* Fishing
