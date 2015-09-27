@@ -3,7 +3,7 @@ layout: home
 excerpt: "if (lost) consultMap()"
 tags: [Jekyll, theme, responsive, blog, template]
 image:
-  feature: yellow-metal-design-decoration.jpg
+  feature: wood-lighting-creativity-paper.jpg
   credit: Pexels
-  creditlink: https://www.pexels.com/photo/geometric-decoration-5836/
+  creditlink: https://www.pexels.com/photo/creativity-paper-magic-typography-6727/
 ---
