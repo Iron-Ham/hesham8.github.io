@@ -8,7 +8,7 @@ image:
   feature: metallurgy.jpg
   credit: Institute Of Metallurgical and Foundry Engineering
   creditlink: http://metont.uni-miskolc.hu/en/?page_id=2890
-published: false
+published: true
 ---
 
 <section id="table-of-contents" class="toc">
@@ -57,43 +57,45 @@ If the move improves the situation, the move is accepted. Otherwise, the move is
 
 {% highlight java %}
 int[] simulatedAnnealing() {
-    int[] currentState = generateInitialState();
-    int iter = 0;
-    while (MAX_ITERATIONS == -1 || iter < MAX_ITERATIONS) {
-        temp = calculateTemp();
-        double currentStateFitness = calculateStateCost(currentState);
-        if (currentStateFitness == 1.0) return currentState;
-        int[] nextState = generateNeighborState(currentState);
-        double nextStateFitness = calculateStateCost(nextState);
+     int[] currentState = generateInitialState();
+     int iter = 0;
+     double temp = INITIAL_TEMP;
+     while (MAX_ITERATIONS == -1 || iter < MAX_ITERATIONS) {
+         temp = scheduleAnnealing(temp);
+         double currentStateFitness = calculateStateFitness(currentState);
+         if (currentStateFitness == 1.0) return currentState;
+         int[] nextState = generateNeighborState(currentState);
+         double nextStateFitness = calculateStateFitness(nextState);
+         double delta = nextStateFitness - currentStateFitness;
+         if (delta > 0) {
+             currentState = nextState;
+         } else if (rand.nextDouble() <= probabilityOfAcceptance(delta, temp)) {
+             currentState = nextState;
+         }
 
-        double delta = nextStateFitness - currentStateFitness;
-        if (delta > 0) {
-            currentState = nextState;
-        } else if (rand.nextDouble() <= probabilityOfAcceptance(delta, temp)) {
-            currentState = nextState;
-        }
+         iter++;
+     }
+     return currentState;
+ }
 
-        iter++;
-    }
-    return currentState;
-}
-
-private double probabilityOfAcceptance(double delta, double temperature) {
-    return Math.exp(delta / temperature);
-}
+ private double probabilityOfAcceptance(double delta, double temperature) {
+     return Math.exp(delta / temperature);
+ }
 {% endhighlight %}
 
 Beyond that, the simulated annealing approach shares much of its code with the genetic algorithm approach. The `calculateSateCost()` function is identical to the genetic algorithm's `assessFitness()` function. It generates its initial state in the same way as well. The only non-fixed component of simulated annealing is the annealing schedule.
 
 ### The Annealing schedule
 
-Deciding on an annealing schedule is as much an art as it is a science. There's been [some research](http://www.fys.ku.dk/~andresen/BAhome/ownpapers/permanents/annealSched.pdf) on annealing schedules and their relative performances. Some adhere to logarithmic schedules, others to geometric ones, and others to more complex functions.
+Deciding on an annealing schedule is as much an art as it is a science. There's been [some research](http://www.fys.ku.dk/~andresen/BAhome/ownpapers/permanents/annealSched.pdf) on annealing schedules and their relative performances. Some adhere to logarithmic schedules, others to geometric ones, some to linear functions, and others to more complex functions[^1].
+
+[^1]: <http://www.researchgate.net/publication/238977971_Thermodynamic_Length_and_Dissipated_Availability>
 
 Here's an example geometric annealing schedule:
 
 {% highlight java %}
-private double calculateTemp() {
-    return temp * 0.97;
+private double scheduleAnnealing(double currentTemp) {
+    return currentTemp * 0.97;
 }
 {% endhighlight %}
 
