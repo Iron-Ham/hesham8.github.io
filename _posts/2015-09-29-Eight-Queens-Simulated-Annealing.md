@@ -8,7 +8,7 @@ image:
   feature: metallurgy.jpg
   credit: Institute Of Metallurgical and Foundry Engineering
   creditlink: http://metont.uni-miskolc.hu/en/?page_id=2890
-published: true
+published: false
 ---
 
 <section id="table-of-contents" class="toc">
