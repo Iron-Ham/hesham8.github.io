@@ -20,7 +20,7 @@ image:
 </div>
 </section><!-- /#table-of-contents -->
 
-> Part One of Four
+> Part One of Three
 
 This is the first part in a four part series on the eight queens problem. This first part will focus on introducing the Eight Queens problem, as well as recursively generating a set of all possible solutions.
 
