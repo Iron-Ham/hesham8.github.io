@@ -83,32 +83,21 @@ Currently, the `placeQueens()` method is written such that it can only written a
 
 {% highlight java %}
 //Does not include mirror image solutions. (i.e., 42061753 is not distinct from 35716024)
-void placeQueens(int row, Integer[] columns, List<Integer[]> results) {
+void placeQueens(int row, Integer[] columns, List<Integer[]> results, boolean withDuplicates) {
     if (row == GRID_SIZE) {
         results.add(columns.clone());
+        if (withDuplicates) {
+          Integer[] reverseSolution = new Integer[GRID_SIZE];
+          for (int i = 0; i < GRID_SIZE; i++) {
+              reverseSolution[i] = columns[columns.length - i - 1];
+          }
+          results.add(reverseSolution);
+        }
     } else {
         for (int col = 0; col < GRID_SIZE; col++) {
             if (checkValid(columns, row, col)) {
                 columns[row] = col;
                 placeQueens(row + 1, columns, results);
-            }
-        }
-    }
-}
-
-void placeQueensWithDuplicates(int row, Integer[] columns, List<Integer[]> results) {
-    if (row == GRID_SIZE) {
-        results.add(columns.clone());
-        Integer[] reverseSolution = new Integer[GRID_SIZE];
-        for (int i = 0; i < GRID_SIZE; i++) {
-            reverseSolution[i] = columns[columns.length - i - 1];
-        }
-        results.add(reverseSolution);
-    } else {
-        for (int col = 0; col < GRID_SIZE; col++) {
-            if (checkValid(columns, row, col)) {
-                columns[row] = col;
-                placeQueensWithDuplicates(row + 1, columns, results);
             }
         }
     }
