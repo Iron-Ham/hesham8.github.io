@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Turning the Heat Up"
+title: "Cooling Molten Problem States"
 excerpt: "A simulated annealing approach to solving Eight Queens"
 tags: [eight_queens, simulated_annealing, code_snippet, java]
 comments: true
@@ -100,4 +100,4 @@ private double calculateTemp() {
 
 ## Next Time
 
-For the fourth and final part of this series, I will perform a series of run-time analyses on the three methods. Bear in mind that the relative performances of the genetic and simulated annealing algorithms have much to do with their constant figures. As always, the code used here is [available on GitHub](https://github.com/hesham8/daily-challenge/blob/master/8Queens/SimulatedAnnealing.java). 
+For the fourth and final part of this series, I will perform a series of run-time analyses on the three methods. Bear in mind that the relative performances of the genetic and simulated annealing algorithms have much to do with their constant figures. As always, the code used here is [available on GitHub](https://github.com/hesham8/daily-challenge/blob/master/8Queens/SimulatedAnnealing.java).
