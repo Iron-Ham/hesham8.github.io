@@ -27,7 +27,7 @@ published: true
 </div>
 </section><!-- /#table-of-contents -->
 
-> Part Two of Four
+> Part Two of Three
 
 If you're not familiar with the 8 Queens problem, please read my [previous post]({% post_url 2015-09-23-eight-queens-problem %}) or consult an online resource.[^1]
 
