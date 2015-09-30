@@ -21,7 +21,7 @@ published: true
 </div>
 </section><!-- /#table-of-contents -->
 
-> Part Three of Four
+> Part Three of Three
 
 If you're not familiar with the 8 Queens problem, please read my [previous post]({% post_url 2015-09-23-eight-queens-problem %}). Make sure to also check out the [genetic algorithm approach]({% post_url 2015-09-26-eight-queens-genetic-algorithm %}).
 
@@ -99,7 +99,4 @@ private double scheduleAnnealing(double currentTemp) {
 }
 {% endhighlight %}
 
-
-## Next Time
-
-For the fourth and final part of this series, I will perform a series of run-time analyses on the three methods. Bear in mind that the relative performances of the genetic and simulated annealing algorithms have much to do with their constant figures. As always, the code used here is [available on GitHub](https://github.com/hesham8/daily-challenge/blob/master/8Queens/SimulatedAnnealing.java).
+As always, the code presented here is [available in full on GitHub](https://github.com/hesham8/daily-challenge/blob/master/8Queens/SimulatedAnnealing.java).
