@@ -67,7 +67,7 @@ class MyClass {
       c.close();
     }
     catch (SQLException | ClassNotFoundException e) {
-      e.printSTackTrace();
+      e.printStackTrace();
     }
     finally {
       try {
