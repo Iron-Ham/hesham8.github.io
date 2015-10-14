@@ -14,7 +14,7 @@ I'm writing this post because it seems that a lot of my colleagues and classmate
 
 So the first thing y'all have to realize is that you need the proper driver for your database format. If you're using a SQLite database, you can use Xerial or Zentus. If you're using Oracle, Google around for Oracle's JDBC driver (it's there -- I promise), and so on and so forth. For the purposes of this demo, I'll just be using SQLite because it's a single file and we won't have to worry too much about scale (if any of you dare take a SQLite DB into production I will be very unhappy with y'all. If you already have a SQLite database and you want to take it into production, take a look at [converting your SQLite database to PostgreSQL](https://wiki.postgresql.org/wiki/Converting_from_other_Databases_to_PostgreSQL)).
 
-Since I'm using SQLite, I'll be using the Xerial driver. The first thing you want to do in your Java program is import the SQL packages. A lot of people will tell you to do a `import java.sql.*;` call, but I think that's tacky and bad practice (if you don't agree with me, just know that you're also disagreeing with [Google's Java Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javaguide.html)). Instead, just import the few packages you need. A few basic ones are `java.sql.DriverManager` and `java.sql.Connection`. 
+Since I'm using SQLite, I'll be using the Xerial driver. The first thing you want to do in your Java program is import the SQL packages. A lot of people will tell you to do a `import java.sql.*;` call, but I think that's tacky and bad practice (if you don't agree with me, just know that you're also disagreeing with [Google's Java Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javaguide.html)). Instead, just import the few packages you need. A few basic ones are `java.sql.DriverManager` and `java.sql.Connection`.
 
 ## Registering JDBC Driver
 
@@ -39,7 +39,7 @@ So to cap this off, let's do a quick database demo:
 import java.sql.*; //JUST for the purpose of THIS demo. Don't actually do this in YOUR code!
 
 class MyClass {
-  static final URL = "jdbc:sqlite:myawesomedb"
+  static final URL = "jdbc:sqlite:myawesomedb";
 
   public static void main(String[] args) {
     Connection c;
