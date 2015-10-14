@@ -72,10 +72,14 @@ class MyClass {
     finally {
       try {
         if (stmt != null) stmt.close();
-      } catch (SQLException s) { //do nothing }
+      } catch (SQLException s) { 
+        //do nothing 
+      }
       try {
         if (c != null) c.close();
-      } catch (SQLException s) { //do nothing }
+      } catch (SQLException s) { 
+        //do nothing
+      }
     }
   }
 }
