@@ -82,7 +82,7 @@ These state path values are then maximized for each state *s*, and then the maxi
 
 In the following code sample, I'll be assuming that the prior probability will be calculated using method two.
 
-```java
+{% highlight java %}
 private void trainModel(String filePath) {
     Scanner fileReader = null;
 
@@ -148,12 +148,12 @@ private void calculateTransitions() {
         }
     }
 }
-```
+{% endhighlight %}
 
 
 ### Implementing the Viterbi
 
-```java
+{% highlight java %}
 private void testHMM(String filePath) {
     PrintWriter pw = null;
     Scanner fileReader = null;
@@ -228,7 +228,7 @@ private void testHMM(String filePath) {
         }
     }
 }
-```
+{% endhighlight %}
 
 ## Conclusion
 
