@@ -57,7 +57,7 @@ Our data set looks like this:
 The Viterbi algorithm requires three sets of probabilities:
 
 1. The prior probability of any one event occurring.
-2. The emission probability (the chance of event *o* occuring given state *s* -- P(o|s)).
+2. The emission probability (the chance of event *o* occuring given state *s* -- P(o\|s)).
 3. The transition probability -- the chance of moving from state *s* to state *t*.
 
 Calculating the prior probability of this data set is trivial, and there are three easy, valid methods of doing so:
