@@ -10,7 +10,7 @@ Markov models are wonderful things. They're probabilistic models used to model d
 
 Markov chains are autonomous systems wherein the system state is fully observable. All Markov processes are dependent on two properties: conditional independence (the same as is used in Bayes theorem), and the Markov property. The Markov property is as follows: the probability distribution of the next state depends only on the current state and *not* on the sequence of events that preceded it.
 
-A hidden Markov model is a Markov chain wherein the state is only *partiallY* observable. Observations into the system are insufficient to determine the state of the system. There are several algorithms involving HMMs, but today I'll be exploring the Viterbi. The Viterbi algorithm is used to find the most likely sequence of states in a HMM. Common uses of the Viterbi are speech recognition, spelling correction, and handwriting recognition.
+A hidden Markov model is a Markov chain wherein the state is only *partially* observable. Observations into the system are insufficient to determine the state of the system. There are several algorithms involving HMMs, but today I'll be exploring the Viterbi. The Viterbi algorithm is used to find the most likely sequence of states in a HMM. Common uses of the Viterbi are speech recognition, spelling correction, and handwriting recognition.
 
 Today, I'll be demonstrating a HMM that corrects for spelling errors.
 
